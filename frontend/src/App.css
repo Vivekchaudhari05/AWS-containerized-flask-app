@@ -1,0 +1,181 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #e8eefc;
+  background: #0b1020;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at top left, #172554 0, transparent 45%),
+    #0b1020;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 7%;
+  border-bottom: 1px solid #26324b;
+  background: rgba(11, 16, 32, 0.8);
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: -0.8px;
+  color: #93c5fd;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #b8c4da;
+  font-size: 13px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+}
+
+.dashboard {
+  width: min(1100px, 86%);
+  margin: 0 auto;
+  padding: 65px 0 25px;
+}
+
+.welcome {
+  margin-bottom: 36px;
+}
+
+.eyebrow {
+  color: #60a5fa;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.welcome h2 {
+  margin: 14px 0;
+  font-size: clamp(30px, 5vw, 46px);
+  letter-spacing: -1.5px;
+}
+
+.welcome > p:last-child {
+  max-width: 600px;
+  color: #a5b4cf;
+  line-height: 1.8;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 25px;
+  border: 1px solid #293650;
+  border-radius: 18px;
+  background: rgba(20, 29, 51, 0.85);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #60a5fa;
+}
+
+.card-icon {
+  font-size: 28px;
+}
+
+.card h3 {
+  margin: 18px 0 9px;
+  font-size: 19px;
+}
+
+.card p {
+  min-height: 44px;
+  color: #a5b4cf;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: #123a35;
+  color: #6ee7b7;
+  font-size: 12px;
+}
+
+.badge.pending {
+  background: #302a1d;
+  color: #fcd34d;
+}
+
+footer {
+  padding: 35px 0 10px;
+  text-align: center;
+  color: #71809c;
+  font-size: 12px;
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dashboard {
+    width: 90%;
+    padding-top: 40px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.health-button {
+  margin-top: 14px;
+  padding: 10px 16px;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  background: #1d4ed8;
+  color: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.health-button:hover {
+  background: #2563eb;
+}
+
+.health-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

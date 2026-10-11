@@ -1,0 +1,31 @@
+{
+"family": "containerized-flask-frontend",
+"networkMode": "awsvpc",
+"requiresCompatibilities": [
+"FARGATE"
+],
+"cpu": "256",
+"memory": "512",
+"executionRoleArn": "arn:aws:iam::645314607406:role/ecsTaskExecutionRole",
+"containerDefinitions": [
+{
+"name": "frontend",
+"image": "645314607406.dkr.ecr.ap-south-1.amazonaws.com/containerized-flask-frontend:latest",
+"essential": true,
+"portMappings": [
+{
+"containerPort": 80,
+"protocol": "tcp"
+}
+],
+"logConfiguration": {
+"logDriver": "awslogs",
+"options": {
+"awslogs-group": "/ecs/containerized-flask-app",
+"awslogs-region": "ap-south-1",
+"awslogs-stream-prefix": "frontend"
+}
+}
+}
+]
+}
